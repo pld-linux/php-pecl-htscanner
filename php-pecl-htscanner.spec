@@ -2,7 +2,7 @@
 %define		_status		alpha
 
 Summary:	%{_modname} - htaccess support for PHP
-Summary(pl):	%{_modname} - wsparcie dla htaccess dla PHP
+Summary(pl):	%{_modname} - obs³uga htaccess dla PHP
 Name:		php-pecl-%{_modname}
 Version:	0.6.2
 Release:	1
@@ -24,9 +24,10 @@ just like Apache's htaccess. It is especially useful with fastcgi.
 In PECL status of this extension is: %{_status}.
 
 %description -l pl
-Pakiet ten pozwala na wykorzystanie plików htaccess do konfiguracji
-PHP per katalog, w sposób podobny do konfiguracji w Apache. Jest to
-szczególnie przydatne w przypadku korystania z fastcgi.
+Pakiet ten pozwala na wykorzystanie plików w stylu htaccess do
+konfiguracji PHP per katalog, w sposób podobny do plików htaccess
+Apache'a. Jest to szczególnie przydatne w przypadku korzystania z
+fastcgi.
 
 To rozszerzenie ma w PECL status: %{_status}.
 
