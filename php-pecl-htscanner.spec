@@ -2,7 +2,7 @@
 %define		_status		alpha
 
 Summary:	%{_modname} - htaccess support for PHP
-Summary(pl.UTF-8):   %{_modname} - obsługa htaccess dla PHP
+Summary(pl.UTF-8):	%{_modname} - obsługa htaccess dla PHP
 Name:		php-pecl-%{_modname}
 Version:	0.6.2
 Release:	1
