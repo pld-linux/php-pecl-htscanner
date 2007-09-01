@@ -2,7 +2,7 @@
 %define		_status		alpha
 Summary:	PHP Module to emulate .htaccess support in PHP engine
 Summary(pl.UTF-8):	Moduł PHP do emulacji obsługi .htaccess w silniku PHP
-Name:		php-htscanner
+Name:		php-pecl-htscanner
 Version:	0.8.1
 Release:	0.1
 License:	PHP 3.0
@@ -15,6 +15,7 @@ BuildRequires:	php-devel >= 3:5.0
 BuildRequires:	rpmbuild(macros) >= 1.344
 %{?requires_php_extension}
 Requires:	php-common >= 4:5.0.4
+Obsoletes:	php-htscanner
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
