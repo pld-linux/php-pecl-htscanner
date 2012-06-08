@@ -1,14 +1,14 @@
 %define		_modname	htscanner
-%define		_status		alpha
+%define		_status		stable
 Summary:	%{_modname} - PHP module to emulate .htaccess support in PHP engine
 Summary(pl.UTF-8):	%{_modname} - moduł PHP do emulacji obsługi .htaccess w silniku PHP
 Name:		php-pecl-htscanner
-Version:	0.9.0
+Version:	1.0.1
 Release:	3
 License:	PHP 3.01
 Group:		Development/Languages/PHP
 Source0:	http://pecl.php.net/get/htscanner-%{version}.tgz
-# Source0-md5:	ad8f28e4cdfec6d3a5a990e1531a1a12
+# Source0-md5:	7fbef47361933fd932a2ff8f44849f0e
 URL:		http://pecl.php.net/package/htscanner/
 BuildRequires:	php-devel >= 3:5.0
 BuildRequires:	rpmbuild(macros) >= 1.344
