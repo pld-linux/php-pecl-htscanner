@@ -1,8 +1,9 @@
-%define		_modname	htscanner
-%define		_status		stable
-Summary:	%{_modname} - PHP module to emulate .htaccess support in PHP engine
-Summary(pl.UTF-8):	%{_modname} - moduł PHP do emulacji obsługi .htaccess w silniku PHP
-Name:		php-pecl-htscanner
+%define		php_name	php%{?php_suffix}
+%define		modname	htscanner
+%define		status		stable
+Summary:	%{modname} - PHP module to emulate .htaccess support in PHP engine
+Summary(pl.UTF-8):	%{modname} - moduł PHP do emulacji obsługi .htaccess w silniku PHP
+Name:		%{php_name}-pecl-htscanner
 Version:	1.0.1
 Release:	5
 License:	PHP 3.01
@@ -10,8 +11,8 @@ Group:		Development/Languages/PHP
 Source0:	http://pecl.php.net/get/htscanner-%{version}.tgz
 # Source0-md5:	7fbef47361933fd932a2ff8f44849f0e
 URL:		http://pecl.php.net/package/htscanner/
-BuildRequires:	php-devel >= 3:5.0
-BuildRequires:	rpmbuild(macros) >= 1.344
+BuildRequires:	%{php_name}-devel >= 3:5.0
+BuildRequires:	rpmbuild(macros) >= 1.650
 %{?requires_php_extension}
 Requires:	php(core) >= 5.0.4
 Obsoletes:	php-htscanner
@@ -28,7 +29,7 @@ This extension parses these configuration files (in most cases
 for a configuration file from the docroot until the directory where
 the request scripts is found.
 
-In PECL status of this extension is: %{_status}.
+In PECL status of this extension is: %{status}.
 
 %description -l pl.UTF-8
 Przy używaniu PHP w wersji CGI (zwykłej CGI lub Fast-CGI) Apache nie
@@ -41,7 +42,7 @@ większości przypadków .htaccess) i zmienia ustawienia. Szuka pliku
 konfiguracyjnego we kwszystkich katalogach od głównego (DocumentRoot)
 co katalogu zawierającego żadane skrypty.
 
-To rozszerzenie ma w PECL status: %{_status}.
+To rozszerzenie ma w PECL status: %{status}.
 
 %prep
 %setup -q -n htscanner-%{version}
@@ -58,9 +59,9 @@ rm -rf $RPM_BUILD_ROOT
 	INSTALL_ROOT=$RPM_BUILD_ROOT
 
 install -d $RPM_BUILD_ROOT{%{php_sysconfdir}/conf.d,%{php_extensiondir}}
-cat <<'EOF' > $RPM_BUILD_ROOT%{php_sysconfdir}/conf.d/%{_modname}.ini
-; Enable %{_modname} extension module
-extension=%{_modname}.so
+cat <<'EOF' > $RPM_BUILD_ROOT%{php_sysconfdir}/conf.d/%{modname}.ini
+; Enable %{modname} extension module
+extension=%{modname}.so
 
 ;htscanner.config_file		= .htaccess
 ;htscanner.default_docroot	= /
@@ -82,5 +83,5 @@ fi
 %files
 %defattr(644,root,root,755)
 %doc CREDITS README
-%config(noreplace) %verify(not md5 mtime size) %{php_sysconfdir}/conf.d/%{_modname}.ini
-%attr(755,root,root) %{php_extensiondir}/%{_modname}.so
+%config(noreplace) %verify(not md5 mtime size) %{php_sysconfdir}/conf.d/%{modname}.ini
+%attr(755,root,root) %{php_extensiondir}/%{modname}.so
